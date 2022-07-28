@@ -9,24 +9,22 @@ services:
       - 80:80
     networks:
       - a
+      - b
   redis:
     image: redis:4.0.11-alpine
     networks:
       - b
-    volumes:
-      - dbdata:/data
-  
+    # volumes:
+    #   - dbdata:/data
+
 networks:
-  - a
-  - b
-volumes:
-  dbdata:
-    driver: local
-    driver_opts:
-      type: 'none'
-      o: 'bind'
-      device: '/srv/redis'
+  a:
+  b:
 
-
-
-
+# volumes:
+#   dbdata:
+#     driver: local
+#     driver_opts:
+#       type: 'none'
+#       o: 'bind'
+#       device: '/srv/redis'
