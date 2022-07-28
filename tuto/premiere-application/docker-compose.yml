@@ -13,8 +13,20 @@ services:
     image: redis:4.0.11-alpine
     networks:
       - b
+    volumes:
+      - dbdata:/data
+  
 networks:
   - a
   - b
+volumes:
+  dbdata:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/srv/redis'
+
+
 
 
