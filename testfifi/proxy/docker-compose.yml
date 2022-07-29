@@ -3,17 +3,17 @@ services:
  proxy:
   build: ./
   networks:
-   - example1
-   - example2
+   - a
+   - b
   ports:
    - 80:80
    - 443:443
 
 
 networks:
- example1:
+ a:
    external:
-     name: web1_default
- example2:
+     name: a
+ b:
    external:
-      name: web2_default
+      name: b

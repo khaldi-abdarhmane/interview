@@ -10,3 +10,8 @@ services:
    - .:/usr/share/nginx/html
   ports:
    - "80"
+  networks:
+   - a 
+
+networks:
+   a:   
