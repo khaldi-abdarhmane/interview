@@ -4,7 +4,7 @@ services:
   build: ./
 
   ports:
-   - 8080:8080
+   - 80:80
    - 443:443
   networks:
     - db_app_net  
@@ -33,7 +33,7 @@ services:
       PGADMIN_DEFAULT_EMAIL: admin@admin.com
       PGADMIN_DEFAULT_PASSWORD: root
     ports:
-      - "80:80"  
+      - "80"  
 
 
    
