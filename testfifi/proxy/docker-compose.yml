@@ -3,8 +3,8 @@ services:
  proxy:
   build: ./
   networks:
-   - web1_default
-   - web2_default
+   - example1
+   - example2
   ports:
    - 80:80
    - 443:443
