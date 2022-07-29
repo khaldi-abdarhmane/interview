@@ -6,9 +6,8 @@ services:
   ports:
    - 80:80
    - 443:443
-  # networks: 
-  #  - example1
-  #  - example2
+  networks:
+    - db_app_net  
 
 
  db_app:
