@@ -9,6 +9,34 @@ services:
   # networks: 
   #  - example1
   #  - example2
+
+
+  db_app:
+    container_name: db_app_container
+    image: postgres
+    environment:
+      POSTGRES_USER: "admin"
+      POSTGRES_PASSWORD: "admin"
+      PGDATA: /data/db_app
+    volumes:
+      - db_app:/data/db_app
+    ports:
+      - "5434:5432"
+    networks:
+      - db_app_net
+    restart: unless-stopped
+  pgadmin:
+    container_name: pgadmin4_container
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "5050:80"  
+    networks:
+      - db_app_net  
+
    
 # networks:
 #   example1:
@@ -17,3 +45,11 @@ services:
 #   example2:
 #     external:
 #     name: example2_default
+networks:
+  db_app_net:
+    driver: bridge
+  webgateway:
+    driver: bridge
+volumes:
+  db_app:
+  v_traefik:
