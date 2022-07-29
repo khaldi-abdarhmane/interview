@@ -1,0 +1,12 @@
+version: '3'
+
+
+
+  # Proxies requests to internal services
+services:
+ app:
+  image: nginx
+  volumes:
+   - .:/usr/share/nginx/html
+  ports:
+   - "80"
