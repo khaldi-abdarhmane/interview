@@ -3,7 +3,7 @@ services:
  proxy:
   build: ./
   networks:
-   - a
+   - aa
    - b
   ports:
    - 80:80
