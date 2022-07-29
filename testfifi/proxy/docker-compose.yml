@@ -2,18 +2,11 @@ version: '3'
 services:
  proxy:
   build: ./
-  networks:
-   - a
-   - b
+  # networks:
+  #  - a
+  #  - b
   ports:
    - 80:80
    - 443:443
 
 
-networks:
- a:
-   external:
-     name: web1_a
- b:
-   external:
-      name: b
