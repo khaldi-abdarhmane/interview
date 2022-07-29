@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+
+  # Proxies requests to internal services
+  reverse-proxy:
+    image: nginx:1.17.10
+    container_name: reverse_proxy_demo
+
+    volumes:
+      - .:/usr/share/nginx/html
+    ports:
+      - 80:80
