@@ -13,7 +13,7 @@ services:
 networks:
  a:
    external:
-     name: a
+     name: aa
  b:
    external:
       name: b
