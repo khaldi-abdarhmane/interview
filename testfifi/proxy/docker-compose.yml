@@ -3,7 +3,7 @@ services:
  proxy:
   build: ./
   networks:
-   - aa
+   - a
    - b
   ports:
    - 80:80
@@ -13,7 +13,7 @@ services:
 networks:
  a:
    external:
-     name: aa
+     name: web1_a
  b:
    external:
       name: b
